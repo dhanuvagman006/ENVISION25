@@ -1,6 +1,7 @@
 import React from "react";
 import mainBg from "../assets/homebg.png"; 
 import NavBar from "./Navbar";
+import Hero from "./Hero";
 function LandingPage() {
   return (
     <div
@@ -15,14 +16,13 @@ function LandingPage() {
     >
       <div
         style={{
-          padding: "2rem",
           minHeight: "200vh",
           color: "white", 
-          backgroundColor: "rgba(0, 0, 0, 0.2)", 
+          backgroundColor: "rgba(0, 0, 0, 0.0)", 
         }}
       >
         <NavBar/>
-        
+        <Hero/>
       </div>
     </div>
   );
