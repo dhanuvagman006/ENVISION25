@@ -84,10 +84,10 @@ export function StickyNavbar() {
               className="dropdown-content bg-gray-800 text-white mt-2 w-48 rounded-xl shadow-xl border border-gray-700"
             >
               <li>
-                <a className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
+                <a href='profile' className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
                   Profile
                 </a>
-                <a href='settings' className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
+                <a href='/settings' className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
                   Settings
                 </a>
                 <a href='/logout'className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
