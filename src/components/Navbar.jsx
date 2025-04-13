@@ -2,11 +2,11 @@ import React from "react";
 
 export function StickyNavbar() {
   const total = 450;
-  const eventsPurchased = 5;
+  const eventsPurchased = 0;
 
   return (
     <nav className="bg-gray-800 bg-opacity-80 text-white shadow-lg fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl mx-auto rounded-2xl z-50 transition-all duration-300">
-      <div className="flex items-center justify-between px-4 py-3 md:px-6">
+      <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <div className="flex-shrink-0">
           <a href="/" className="text-xl font-bold tracking-tight hover:text-gray-200 transition-colors">
@@ -21,7 +21,7 @@ export function StickyNavbar() {
               <li key={item}>
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className="px-3 py-2 rounded-lg hover:bg-gray-700 hover:text-gray-200 transition-colors text-sm font-medium"
+                  className="px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-gray-200 transition-colors text-sm font-medium"
                 >
                   {item}
                 </a>
@@ -31,7 +31,7 @@ export function StickyNavbar() {
         </div>
 
         {/* Right Section */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-4">
           {/* Cart Dropdown */}
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle relative">
@@ -72,7 +72,7 @@ export function StickyNavbar() {
           {/* Profile Dropdown */}
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-              <div className="w-8 rounded-full overflow-hidden">
+              <div className="w-8 h-8 rounded-full overflow-hidden">
                 <img
                   alt="Profile"
                   src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
@@ -84,16 +84,16 @@ export function StickyNavbar() {
               className="dropdown-content bg-gray-800 text-white mt-2 w-48 rounded-xl shadow-xl border border-gray-700"
             >
               <li>
-                <a className="flex justify-between items-center px-4 py-2 hover:bg-gray-700">
+                <a className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
                   Profile
-                  <span className="badge badge-sm badge-primary">New</span>
                 </a>
-              </li>
-              <li>
-                <a className="px-4 py-2 hover:bg-gray-700">Settings</a>
-              </li>
-              <li>
-                <a className="px-4 py-2 hover:bg-gray-700">Logout</a>
+                <a className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
+                  Settings
+                </a>
+                <a className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
+                  logout
+                </a>
+              
               </li>
             </ul>
           </div>
@@ -125,7 +125,7 @@ export function StickyNavbar() {
                   <li key={item}>
                     <a
                       href={`#${item.toLowerCase()}`}
-                      className="block px-4 py-2 hover:bg-gray-700"
+                      className="block px-4 py-3 hover:bg-gray-700"
                     >
                       {item}
                     </a>
