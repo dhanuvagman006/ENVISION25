@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>College Fest 2025</title>
+  <title>ENVISION 2025</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,36 +16,8 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-gray-900 text-white font-sans flex flex-col items-center justify-center min-h-screen p-4">
+<body>
 
-  <h1 class="text-4xl md:text-6xl font-bold mb-6">Welcome to <span class="text-pink-500">Festify 2025</span></h1>
-
-  <!-- Lottie Animation -->
-  <div id="lottie-container" class="w-64 h-64 mb-6"></div>
-
-  <!-- Motion Button -->
-  <button id="motionBtn" class="bg-pink-600 px-6 py-3 rounded-xl text-lg font-semibold hover:bg-pink-700 transition-all">
-    Let's Go 🎉
-  </button>
-
-  <script>
-    // Lottie animation setup
-const lottieContainer = document.getElementById('lottie-container');
-
-lottie.loadAnimation({
-  container: lottieContainer,
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: 'https://assets2.lottiefiles.com/packages/lf20_totrpclr.json' // Change this to any Lottie JSON you like
-});
-
-// Framer Motion Animation
-const motionBtn = document.getElementById('motionBtn');
-
-// We'll animate this manually using JS and Framer's API
-motion.animate(motionBtn, { scale: [1, 1.1, 1] }, { duration: 1.5, repeat: Infinity });
-
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
