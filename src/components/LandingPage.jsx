@@ -1,5 +1,5 @@
 import React from "react";
-import mainBg from "../assets/homebg.png"; // Ensure path is correct
+import mainBg from "../assets/homebg.png"; 
 import NavBar from "./Navbar";
 function LandingPage() {
   return (
@@ -18,10 +18,11 @@ function LandingPage() {
           padding: "2rem",
           minHeight: "200vh",
           color: "white", 
-          backgroundColor: "rgba(0, 0, 0, 0.5)", 
+          backgroundColor: "rgba(0, 0, 0, 0.2)", 
         }}
       >
         <NavBar/>
+        
       </div>
     </div>
   );
