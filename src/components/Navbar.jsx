@@ -5,7 +5,7 @@ export function StickyNavbar() {
   const eventsPurchased = 0;
 
   return (
-    <nav className="bg-gray-800 bg-opacity-80 text-white shadow-lg fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl mx-auto rounded-2xl z-50 transition-all duration-300">
+    <nav className="bg-gray-800 bg-opacity-50 text-white shadow-lg fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl mx-auto rounded-2xl z-50 transition-all duration-300">
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <div className="flex-shrink-0">
@@ -87,13 +87,12 @@ export function StickyNavbar() {
                 <a className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
                   Profile
                 </a>
-                <a className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
+                <a href='settings' className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
                   Settings
                 </a>
-                <a className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
+                <a href='/logout'className="flex justify-between items-center px-4 py-3 hover:bg-gray-700">
                   logout
                 </a>
-              
               </li>
             </ul>
           </div>
