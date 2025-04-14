@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
-import LoginPage from "./components/Loginpage.jsx";
+import LoginPage from "./pages/Login.jsx";
 import Loader from "./components/Loader";
 import NotFoundPage from "./components/NotFoundPage.jsx";
-
+import PrivateRoute from "./PrivateRoute.jsx";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -20,14 +20,13 @@ function App() {
         setLoading(false);
       } catch (error) {
         console.error("Failed to load resources:", error);
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
     loadResources();
 
-    return () => {
-    };
+    return () => {};
   }, []);
 
   if (loading) {
@@ -40,13 +39,20 @@ function App() {
   }
 
   return (
-    <Router>
+    <BrowserRouter>
+
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
+
+        <Route element={<PrivateRoute />}>
+        
+        </Route>
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Router>
+
+    </BrowserRouter>
   );
 }
 

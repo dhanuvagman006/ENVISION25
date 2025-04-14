@@ -1,0 +1,1 @@
+export const backendimageofLogin = "./assets/background.png";
