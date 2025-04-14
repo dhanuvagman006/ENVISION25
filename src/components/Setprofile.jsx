@@ -66,18 +66,18 @@ function SetProfile() {
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{ backgroundImage: `url(${heroimg})` }}
       />
-      {/* Backdrop Blur Layer */}
-      <div className="absolute inset-0 backdrop-blur-md bg-black/30 z-10" />
+      {/* Backdrop Blur - Increased to backdrop-blur-xl for stronger effect */}
+      <div className="absolute inset-0 backdrop-blur-xl bg-white/5 z-10" />
 
       {/* Form Container */}
       <div className="relative min-h-screen flex items-center justify-center px-4 py-8 z-20">
-        <div className="bg-white/20 backdrop-blur-lg p-6 sm:p-8 rounded-2xl shadow-2xl text-black max-w-lg w-full border border-white/30">
-          <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-black">
+        <div className="bg-white/15 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-2xl text-black max-w-lg w-full border border-white/30">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
             Complete Your Profile
           </h1>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Profile Photo */}
+            {/* Profile Photo (Unchangeable) */}
             <div className="flex justify-center mb-4">
               <img
                 src={userDetails.profileUrl}
@@ -88,9 +88,7 @@ function SetProfile() {
 
             {/* Email (Unchangeable) */}
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
-                Email
-              </label>
+              <label className="block text-sm font-medium mb-1">Email</label>
               <input
                 type="email"
                 value={userDetails.email}
@@ -101,7 +99,7 @@ function SetProfile() {
 
             {/* Name (Required) */}
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-sm font-medium mb-1">
                 Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -121,7 +119,7 @@ function SetProfile() {
 
             {/* College Name (Required) */}
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-sm font-medium mb-1">
                 College Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -141,7 +139,7 @@ function SetProfile() {
 
             {/* City (Required) */}
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-sm font-medium mb-1">
                 City <span className="text-red-500">*</span>
               </label>
               <input
@@ -161,7 +159,7 @@ function SetProfile() {
 
             {/* Phone Number (Required) */}
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-sm font-medium mb-1">
                 Phone Number <span className="text-red-500">*</span>
               </label>
               <input
