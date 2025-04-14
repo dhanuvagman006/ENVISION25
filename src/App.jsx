@@ -4,6 +4,7 @@ import LandingPage from "./components/LandingPage";
 import LoginPage from "./components/Loginpage.jsx";
 import Loader from "./components/Loader";
 import NotFoundPage from "./components/NotFoundPage.jsx";
+import Setprofile from "./components/Setprofile";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/setProfile" element={<Setprofile/>}/>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
