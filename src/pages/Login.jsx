@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { backendimageofLogin }  from '../data/image.js';
-import Logo from '../assets/images/logo.png';
+import { logo, heroimg }  from '../data/image.js';
+
 import { useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import {jwtDecode} from "jwt-decode";
