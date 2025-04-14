@@ -4,7 +4,7 @@ import LandingPage from "./components/LandingPage";
 import LoginPage from "./pages/Login.jsx";
 import Loader from "./components/Loader";
 import NotFoundPage from "./components/NotFoundPage.jsx";
-import PrivateRoute from "./PrivateRoute.jsx";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -44,11 +44,6 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
-
-        <Route element={<PrivateRoute />}>
-        
-        </Route>
-
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
