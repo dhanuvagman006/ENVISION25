@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
-import LoginPage from "./components/LoginPage";
+import LoginPage from "./components/Loginpage.jsx";
 import Loader from "./components/Loader";
-import NotFoundPage from "./components/NotFoundPage";
+import NotFoundPage from "./components/NotFoundPage.jsx";
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const loadResources = async () => {
       try {
-        //loads user data here and save in local storage
+        // if user signed in load user data here and save in local storage else just continue
         await Promise.all([
           // Add any async resource loading here, e.g., images, API calls
           new Promise((resolve) => setTimeout(resolve, 2000)),
