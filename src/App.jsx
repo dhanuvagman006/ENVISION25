@@ -37,16 +37,15 @@ function App() {
     return (
       <div role="status" aria-live="polite" aria-busy="true">
         <Loader />
-        <span className="sr-only">Loading application...</span>
       </div>
     );
   }
 
   return (
     <BrowserRouter>
-   <NavBar/>
+   
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={ <><NavBar/><Home /> </>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/setprofile" element={<SetProfile />} />
 
