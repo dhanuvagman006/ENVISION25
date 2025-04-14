@@ -31,7 +31,7 @@ export default function Login() {
                 console.log(response);
 
                 Cookies.set('token', response.data.token, { expires: 2, sameSite: 'Strict' });  
-                // Handle successful login
+              
                 toast.success(response.data.message);
                 navigate('/setprofile'); 
             }
