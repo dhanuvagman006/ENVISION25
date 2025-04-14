@@ -7,7 +7,7 @@ import { jwtDecode } from "jwt-decode";
 import axios from 'axios';
 import Cookies from 'js-cookie'; // Import js-cookie
 import { toast } from 'react-toastify';
-import { BACKEND_URL } from '../data/constants.js';
+import { BACKEND_URL } from '../data/constant.js';
 
 export default function Login() {
     const navigate = useNavigate();
