@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
+import { BrowserRouter as BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Hero.jsx";
 import LoginPage from "./pages/Login.jsx";
 import Loader from "./components/Loader";
 import NotFoundPage from "./components/NotFoundPage.jsx";
 
 import PrivateRoute from "./PrivateRoute.jsx";
+import NavBar from "./components/Navbar.jsx";
+import SetProfile from "./pages/Setprofile.jsx";
 
 
 function App() {
@@ -42,15 +44,16 @@ function App() {
 
   return (
     <BrowserRouter>
-
+   <NavBar/>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/setprofile" element={<SetProfile />} />
 
         <Route element={<PrivateRoute />}> 
         </Route>
 
-        
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 

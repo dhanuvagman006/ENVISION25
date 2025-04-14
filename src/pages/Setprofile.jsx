@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import heroimg from "../assets/background1.jpg";
 
-function SetProfile() {
+export default function SetProfile() {
   const location = useLocation();
   const navigate = useNavigate();
   const userDetails = location.state?.userDetails || {
@@ -191,4 +191,3 @@ function SetProfile() {
   );
 }
 
-export default SetProfile;

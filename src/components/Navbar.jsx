@@ -1,6 +1,6 @@
 import React from "react";
 
-export function StickyNavbar() {
+export default function  Navbar() {
   const total = 450;
   const eventsPurchased = 0;
 
@@ -139,4 +139,4 @@ export function StickyNavbar() {
   );
 }
 
-export default StickyNavbar;
+

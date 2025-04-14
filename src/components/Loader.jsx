@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "../assets/camel.json";
 
-function Loader() {
+export default function Loader() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -55,5 +55,3 @@ function Loader() {
     </div>
   );
 }
-
-export default Loader;

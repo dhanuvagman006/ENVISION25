@@ -3,7 +3,7 @@ import heroimg from "../assets/background1.jpg";
 import { auth, provider, signInWithPopup } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
-function LoginPage() {
+export default function LoginPage() {
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState(null);
   const [loading, setLoading] = useState(true); // Track auth state loading
@@ -76,5 +76,3 @@ function LoginPage() {
     </div>
   );
 }
-
-export default LoginPage;
