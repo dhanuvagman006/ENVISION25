@@ -8,6 +8,9 @@ import NotFoundPage from "./components/NotFoundPage.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 import NavBar from "./components/Navbar.jsx";
 import SetProfile from "./pages/Setprofile.jsx";
+import Footer from "./components/Footer.jsx";
+import Contact from "./components/Contact.jsx";
+import TeamSection from "./components/Team.jsx";
 
 
 function App() {
@@ -45,10 +48,10 @@ function App() {
     <BrowserRouter>
    
       <Routes>
-        <Route path="/" element={ <><NavBar/><Home /> </>} />
+        <Route path="/" element={ <><NavBar/><Home /><TeamSection/><Contact/><Footer/></>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/setprofile" element={<SetProfile />} />
-
+        <Route path='/test' element={<Contact/>}/>
         <Route element={<PrivateRoute />}> 
         </Route>
 
