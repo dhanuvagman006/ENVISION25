@@ -52,6 +52,10 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/setprofile" element={<SetProfile />} />
         <Route path='/test' element={<Home2/>}/>
+        <Route path='/tech' element={<><NavBar/></>}/>
+        <Route path='/mega' element={<><NavBar/></>}/>
+        <Route path='/nontech' element={<><NavBar/></>}/>
+
         <Route element={<PrivateRoute />}> 
         </Route>
 
