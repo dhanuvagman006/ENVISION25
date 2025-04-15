@@ -17,10 +17,10 @@ export default function  Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-8">
           <ul className="flex space-x-6">
-            {["Home", "Gallery", "Events", "Contacts"].map((item) => (
+            {["Home", "Gallery", "Events", "Dashboard"].map((item) => (
               <li key={item}>
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={`${item.toLowerCase()}`}
                   className="px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-gray-200 transition-colors text-sm font-medium"
                 >
                   {item}

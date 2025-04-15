@@ -12,6 +12,8 @@ import Footer from "./components/Footer.jsx";
 import Contact from "./components/Contact.jsx";
 import TeamSection from "./components/Team.jsx";
 import Home2 from "./components/Home2.jsx"
+import Dashboard from "./pages/Dashboard.jsx";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -55,6 +57,7 @@ function App() {
         <Route path='/tech' element={<><NavBar/></>}/>
         <Route path='/mega' element={<><NavBar/></>}/>
         <Route path='/nontech' element={<><NavBar/></>}/>
+        <Route path='/dashboard' element={<><NavBar/><Dashboard/></>}/>
 
         <Route element={<PrivateRoute />}> 
         </Route>
