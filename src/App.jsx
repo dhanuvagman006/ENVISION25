@@ -11,7 +11,7 @@ import SetProfile from "./pages/Setprofile.jsx";
 import Footer from "./components/Footer.jsx";
 import Contact from "./components/Contact.jsx";
 import TeamSection from "./components/Team.jsx";
-
+import Home2 from "./components/Home2.jsx"
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -48,10 +48,10 @@ function App() {
     <BrowserRouter>
    
       <Routes>
-        <Route path="/" element={ <><NavBar/><Home /><TeamSection/><Contact/><Footer/></>} />
+        <Route path="/" element={ <><NavBar/><Home /><Home2/><TeamSection/><Contact/><Footer/></>} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/setprofile" element={<SetProfile />} />
-        <Route path='/test' element={<Contact/>}/>
+        <Route path='/test' element={<Home2/>}/>
         <Route element={<PrivateRoute />}> 
         </Route>
 
