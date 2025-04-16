@@ -69,17 +69,22 @@ const EventCard = ({ title, date, time, venue, members, leader, invite }) => (
     <p className="text-xs text-gray-100">{members} member(s)</p>
     <p className="text-xs text-gray-300"><span className="font-semibold text-gray-200">Leader:</span> {leader}</p>
     <div className="mt-3">
-      <p className="text-xs font-semibold text-gray-200 mb-1">Invite Link:</p>
-      <div className="relative">
-        <input
-          className="w-full text-xs bg-gray-900 p-2 rounded-lg text-gray-100 border border-gray-700/50"
-          value={invite}
-          readOnly
-        />
-        <button className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-400">
-          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-        </button>
-      </div>
+      {invite !== "" && (
+  <div className="relative">
+    <p className="text-xs font-semibold text-gray-200 mb-1">Invite Link:</p>
+    <input
+      className="w-full text-xs bg-gray-900 p-2 rounded-lg text-gray-100 border border-gray-700/50"
+      value={invite}
+      readOnly
+    />
+    <button className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-400">
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </button>
+  </div>
+)}
+
     </div>
   </div>
 );
@@ -116,7 +121,7 @@ const EventsSection = () => (
 function Dashboard() {
  return (
     <div className="min-h-screen w-full flex justify-center items-center px-4 py-19 bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364]">
-      <div className="w-full max-w-6xl flex flex-col md:flex-row pt-40 gap-8 ">
+      <div className="w-full max-w-6xl flex flex-col md:flex-row pt-40gap-8 ">
         <ProfileCard />
         <EventsSection />
       </div>
