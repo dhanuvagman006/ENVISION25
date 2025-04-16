@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { heroimg,profileUrl } from "../data/image";
+import { bgimg,profileUrl } from "../data/image";
 import Cookies from "js-cookie";
 import { BACKEND_URL } from "../data/constant";
 
@@ -92,157 +92,88 @@ export default function SetProfile() {
     }
   };
 
-  return (
-    <div className="min-h-screen w-full bg-cover bg-center relative overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: `url(${heroimg})` }}
-      />
-      {/* Backdrop Blur */}
-      <div className="absolute inset-0 backdrop-blur-xl bg-white/5 z-10" />
-
-      {/* Form Container */}
-      <div className="relative min-h-screen flex items-center justify-center px-4 py-8 z-20">
-        <div className="bg-white/15 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-2xl text-black max-w-lg w-full border border-white/30">
-          <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
-            Complete Your Profile
-          </h1>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Profile Photo */}
-            <div className="flex justify-center mb-4">
-              <img
-                src={profileUrl}
-                alt="Profile"
-                className="w-24 h-24 rounded-full object-cover border-2 border-white/50"
-              />
-            </div>
-
-          {/* Email */}
-<div>
-  <label className="block text-sm font-medium mb-1">Email</label>
-  <input
-    type="email"
-    value={formData.email}
-    disabled
-    className="w-full px-4 py-2 bg-white/10 text-black border border-white/30 rounded-lg cursor-not-allowed"
+  return (<div className="min-h-screen w-full bg-cover bg-center relative overflow-hidden">
+  <div
+    className="absolute inset-0 bg-cover bg-center z-0"
+    style={{ backgroundImage: `url(${bgimg})` }}
   />
-</div>
+  <div className="absolute inset-0 backdrop-blur-xl bg-black/40 z-10" />
 
-{/* Envision ID */}
-<div>
-  <label className="block text-sm font-medium mb-1">Envision ID</label>
-  <input
-    type="text"
-    value={formData.envisionid}
-    disabled
-    className="w-full px-4 py-2 bg-white/10 text-black border border-white/30 rounded-lg cursor-not-allowed"
-  />
-</div>
+  <div className="relative z-20 flex items-center justify-center min-h-screen px-4 py-10">
+    <div className="bg-white/10 backdrop-blur-lg border border-white/30 shadow-2xl rounded-3xl p-8 sm:p-10 max-w-2xl w-full transition-all duration-300 hover:scale-[1.01]">
+      <h1 className="text-3xl font-extrabold text-white mb-6 text-center drop-shadow-lg">
+         Set Up Your Profile
+      </h1>
 
-
-            {/* Name */}
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className={`w-full px-4 py-2 bg-white/10 text-black border ${
-                  errors.name ? "border-red-500" : "border-white/30"
-                } rounded-lg`}
-                placeholder="Enter your name"
-              />
-              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
-            </div>
-
-            {/* College Name */}
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                College Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="collegeName"
-                value={formData.collegeName}
-                onChange={handleChange}
-                className={`w-full px-4 py-2 bg-white/10 text-black border ${
-                  errors.collegeName ? "border-red-500" : "border-white/30"
-                } rounded-lg`}
-                placeholder="Enter your college name"
-              />
-              {errors.collegeName && <p className="text-red-500 text-sm mt-1">{errors.collegeName}</p>}
-            </div>
-
-            {/* Course */}
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Course <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="course"
-                value={formData.course}
-                onChange={handleChange}
-                className={`w-full px-4 py-2 bg-white/10 text-black border ${
-                  errors.course ? "border-red-500" : "border-white/30"
-                } rounded-lg`}
-                placeholder="Enter your course"
-              />
-              {errors.course && <p className="text-red-500 text-sm mt-1">{errors.course}</p>}
-            </div>
-
-            {/* Year */}
-            <div>
-  <label className="block text-sm font-medium mb-1">
-    Year <span className="text-red-500">*</span>
-  </label>
-  <input
-    type="text"
-    name="year"
-    value={formData.year || ""}
-    onChange={handleChange}
-    className={`w-full px-4 py-2 bg-white/10 text-black border ${
-      errors.year ? "border-red-500" : "border-white/30"
-    } rounded-lg`}
-    placeholder="Enter your year"
-  />
-  {errors.year && <p className="text-red-500 text-sm mt-1">{errors.year}</p>}
-</div>
-
-
-            {/* Phone Number */}
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Phone Number <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="tel"
-                name="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                className={`w-full px-4 py-2 bg-white/10 text-black border ${
-                  errors.phoneNumber ? "border-red-500" : "border-white/30"
-                } rounded-lg`}
-                placeholder="Enter your phone number"
-              />
-              {errors.phoneNumber && <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>}
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="w-full bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
-            >
-              Save Profile
-            </button>
-          </form>
-        </div>
+      <div className="flex justify-center mb-6">
+        <img
+          src={profileUrl}
+          alt="Profile"
+          className="w-28 h-28 rounded-full object-cover ring-4 ring-white/30 shadow-md transition duration-300 hover:scale-105"
+        />
       </div>
+
+      <form onSubmit={handleSubmit} className="space-y-5">
+        {/* Email and ID (disabled) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label className="text-white text-sm mb-1 block">Email</label>
+            <input
+              type="email"
+              value={formData.email}
+              disabled
+              className="w-full px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg cursor-not-allowed"
+            />
+          </div>
+          <div>
+            <label className="text-white text-sm mb-1 block">Envision ID</label>
+            <input
+              type="text"
+              value={formData.envisionid}
+              disabled
+              className="w-full px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg cursor-not-allowed"
+            />
+          </div>
+        </div>
+
+        {/* Editable Fields */}
+        {[
+          { label: "Name", name: "name", type: "text", required: true },
+          { label: "College Name", name: "collegeName", type: "text", required: true },
+          { label: "Course", name: "course", type: "text", required: true },
+          { label: "Year", name: "year", type: "text", required: true },
+          { label: "Phone Number", name: "phoneNumber", type: "tel", required: true },
+        ].map(({ label, name, type, required }) => (
+          <div key={name}>
+            <label className="text-white text-sm mb-1 block">
+              {label} {required && <span className="text-red-400">*</span>}
+            </label>
+            <input
+              type={type}
+              name={name}
+              value={formData[name]}
+              onChange={handleChange}
+              placeholder={`Enter your ${label.toLowerCase()}`}
+              className={`w-full px-4 py-2 bg-white/10 text-white border ${
+                errors[name] ? "border-red-500" : "border-white/20"
+              } rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all`}
+            />
+            {errors[name] && (
+              <p className="text-red-400 text-sm mt-1">{errors[name]}</p>
+            )}
+          </div>
+        ))}
+
+        <button
+          type="submit"
+          className="w-full mt-4 py-3 rounded-xl font-semibold text-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-white shadow-lg hover:from-orange-500 hover:to-blue-600 transition-all duration-300"
+        >
+          Save Profile
+        </button>
+      </form>
     </div>
+  </div>
+</div>
+
   );
 }
